@@ -1,0 +1,76 @@
+@use 'variaveis';
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    &__container {
+        height: 75px;
+        padding: 8px 36px;
+        display: flex;
+        justify-content: space-between;
+        background-color: variaveis.$corDeFundo;
+
+        @media(max-width: 768px) {
+            padding: 9px 9px 0 9px;
+        }
+    }
+
+    &__logo {
+        max-width: 150px;
+        width: 100%;
+        margin: 5px;
+    }
+
+    &__links {
+        display: flex;
+
+        &__item {
+            margin: 5px;
+        }
+    }
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    color: variaveis.$corTextoBotao;
+    background-color: variaveis.$corBotao;
+    text-transform: uppercase;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+    border: 1px solid variaveis.$corBotao;
+    height: 50px;
+
+    @media(max-width: 768px) {
+        font-size: 12px;
+        padding: 8px 11px;
+        height: 40px;
+    }
+
+    &--cadastro {
+        @media(max-width: 768px) {
+            width: 121px;
+        }
+    }
+
+    &:hover {
+        background-color: lighten(variaveis.$corBotao, 3%);
+    }
+
+    &--dark {
+        background-color: rgba(variaveis.$corBotaoDark, 0.8);
+        border-color: variaveis.$corTextoBotao;
+
+        &:hover {
+            background-color: variaveis.$corTextoBotao;
+            color: variaveis.$corDeFundo;
+        }
+    }
+}

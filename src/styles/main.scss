@@ -1,0 +1,34 @@
+@use 'variaveis';
+@use 'header';
+@use 'footer';
+@use 'slade';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style: none;
+}
+
+body {
+    background-color: variaveis.$corDeFundo;
+}
+
+@mixin text($fontSize: 16px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: variaveis.$corTexto;
+}
+
+.text {
+    @include text();
+}
+
+.text--big {
+    @include text(18px);
+}
+
+.text--small {
+    @include text(12px);
+}
